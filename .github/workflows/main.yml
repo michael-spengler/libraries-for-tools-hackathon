@@ -11,7 +11,7 @@ jobs:
       - name: Installing Dependencies
         run: |
           echo Installing Dependencies
-          npm install -g npm-cli-login
+          sudo npm install -g npm-cli-login
           npm install
       - name: NPM Login
         run: |
