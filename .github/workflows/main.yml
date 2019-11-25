@@ -12,4 +12,5 @@ jobs:
     - name: Run a multi-line script
       run: |
         echo Add other actions to build,
+        npm install
         npm run lib:build && cd dist/th-angular-demo-library && npm publish
