@@ -21,5 +21,5 @@ jobs:
         run: |
           cd dist/th-angular-demo-library
           echo login to npm registry
-          NPM_USER=michael-spengler NPM_PASS=${{ secrets.authToken }} NPM_EMAIL=michael@spengler.biz NPM_REGISTRY=https://npm.pkg.github.com NPM_SCOPE=@michael-spengler NPM_RC_PATH=./ npm-cli-login --verbose
+          NPM_USER=michael-spengler NPM_PASS=${{ secrets.authToken }} NPM_EMAIL=michael@spengler.biz NPM_REGISTRY=https://npm.pkg.github.com NPM_SCOPE=@michael-spengler npm-cli-login --verbose
           npm publish --verbose
