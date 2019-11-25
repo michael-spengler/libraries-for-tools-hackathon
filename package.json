@@ -1,5 +1,5 @@
 {
-  "name": "libraries-for-tools-hackathon",
+  "name": "@michael-spengler/libraries-for-tools-hackathon",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -9,9 +9,10 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "lib:build": "ng build th-angular-demo-library",
-    "lib:pack": "npm run lib:build && cd dist/th-angular-demo-library && npm pack"
+    "lib:pack": "npm run lib:build && cd dist/th-angular-demo-library && npm pack",
+    "lib:publish": "npm run lib:build && cd dist/th-angular-demo-library && npm publish"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "~8.2.7",
     "@angular/common": "~8.2.7",
