@@ -19,8 +19,7 @@ jobs:
           npm run lib:build
       - name: NPM Login & Publish
         run: |
-          echo login to npm registry
-          NPM_USER=michael-spengler NPM_PASS=${{ secrets.authToken }} NPM_EMAIL=michael@spengler.biz NPM_REGISTRY=https://npm.pkg.github.com npm-cli-login
-          echo publish
           cd dist/th-angular-demo-library
-          npm publish
+          echo login to npm registry
+          NPM_USER=michael-spengler NPM_PASS=${{ secrets.authToken }} NPM_EMAIL=michael@spengler.biz NPM_REGISTRY=https://npm.pkg.github.com NPM_SCOPE=michael-spengler NPM_RC_PATH=./ npm-cli-login --verbose
+          npm publish --verbose
