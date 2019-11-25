@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "th-angular-demo-library": [
+        "dist/th-angular-demo-library"
+      ],
+      "th-angular-demo-library/*": [
+        "dist/th-angular-demo-library/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
