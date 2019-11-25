@@ -13,16 +13,14 @@ jobs:
           echo Installing Dependencies
           sudo npm install -g npm-cli-login
           npm install
-      - name: NPM Login
-        run: |
-          echo login to npm registry
-          NPM_USER=michael-spengler NPM_PASS=${{ secrets.authToken }} NPM_EMAIL=michael@spengler.biz NPM_REGISTRY=https://npm.pkg.github.com npm-cli-login
       - name: Run build
         run: |
           echo run lib:build
           npm run lib:build
-      - name: NPM Publish
+      - name: NPM Login & Publish
         run: |
+          echo login to npm registry
+          NPM_USER=michael-spengler NPM_PASS=${{ secrets.authToken }} NPM_EMAIL=michael@spengler.biz NPM_REGISTRY=https://npm.pkg.github.com npm-cli-login
           echo publish
           cd dist/th-angular-demo-library
           npm publish
