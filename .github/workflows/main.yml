@@ -8,9 +8,21 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - name: Run a multi-line script
+      - name: Installing Dependencies
         run: |
-          echo Add other actions to build,
+          echo Installing Dependencies
+          npm install -g npm-cli-login
           npm install
+      - name: NPM Login
+        run: |
+          echo login to npm registry
           NPM_USER=michael-spengler NPM_PASS=${{ secrets.authToken }} NPM_EMAIL=michael@spengler.biz NPM_REGISTRY=https://npm.pkg.github.com npm-cli-login
-          npm run lib:build && cd dist/th-angular-demo-library && npm publish
+      - name: Run build
+        run: |
+          echo run lib:build
+          npm run lib:build
+      - name: NPM Publish
+        run: |
+          echo publish
+          cd dist/th-angular-demo-library
+          npm publish
